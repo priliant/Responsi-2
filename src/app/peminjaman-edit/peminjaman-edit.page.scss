@@ -1,0 +1,45 @@
+ion-content {
+  --background: url('/assets/gedung.jpg') no-repeat center center / cover;
+
+  .header {
+    padding: 5px 1px;
+    background: transparent;
+
+    ion-label {
+      color: rgba(63, 119, 149, 0.614);
+      font-size: 20pt;
+      padding-left: 10%;
+      background: transparent;
+    }
+  }
+
+  .list {
+    padding: 10px 10px;
+    ion-item {
+      color: black;
+      --background: rgba(74, 90, 110, 0.7);
+      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      --min-height: 40px;
+      margin-bottom: 15px;
+      --text-decoration: none !important;
+
+      ion-input {
+        color: #8b8b8b;
+        font-size: 14px;
+      }
+      ion-textarea {
+        color: #8b8b8b;
+        font-size: 14px;
+      }
+      ion-button {
+        --min-height: 40px;
+        left: 118px;
+        top: 467px;
+        margin-top: 40px;
+        --background: #89b0c9;
+        --border-radius: 20px;
+      }
+    }
+  }
+}

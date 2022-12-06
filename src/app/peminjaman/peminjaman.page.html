@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="screen">
+      <div class="header">
+        <ion-title>Dashboard</ion-title>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="list">
+    <ion-list lines="full">
+      <ion-button type="button" [routerLink]="['/peminjaman-tambah']" routerLinkActive="router-link-active" color="success" expand="block">Ajukan Peminjaman</ion-button>
+    </ion-list>
+  </div>
+
+  <ion-list>
+    <ion-list-header>List Data Peminjaman</ion-list-header>
+  </ion-list>
+  <ion-card lines="inset" *ngFor="let peminjaman_value of peminjaman">
+    <ion-item>
+      <ion-label>
+        <p>{{ peminjaman_value.kode_peminjaman }}</p>
+        <p>{{ peminjaman_value.jenis_peminjaman }}</p>
+      </ion-label>
+      <ion-icon color="primary" slot="end" [routerLink]="['/peminjaman-lihat/',peminjaman_value.kode_peminjaman]" routerLinkActive="router-link-active" name="eye-outline" size="small"></ion-icon>
+      <ion-icon color="warning" slot="end" [routerLink]="['/peminjaman-edit/',peminjaman_value.kode_peminjaman]" routerLinkActive="router-link-active" name="create-outline" size="small"></ion-icon>
+      <ion-icon color="danger" slot="end" (click)="deletePeminjaman(peminjaman_value.kode_peminjaman)" name="trash-outline" size="small"></ion-icon>
+    </ion-item>
+  </ion-card>
+
+  <div class="list">
+    <ion-item (click)="logout()">
+      <ion-icon slot="start" ios="exit-outline" md="exit-sharp"></ion-icon>
+      <ion-label>Logout</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
